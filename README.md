@@ -14,3 +14,4 @@ Then search for "Mixamo to MB-Lab Retarget" and enable that too.
 5. click on the "Retarget" tab.
 6. click on the only button it has.
 
+I made this addon on blender version 3.5.0 and it works fine in this version
