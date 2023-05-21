@@ -134,16 +134,16 @@ class MIXAMO_OT_mblab_retarget(bpy.types.Operator):
         select_and_activate(bpy.data.objects.get(mixamo_armature_name))
         bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
 
-        shift_select_objects([mblab_armature_name, mixamo_armature_name])
-        mixamo_armature = bpy.context.selected_objects[0]
-        mblab_armature = bpy.context.selected_objects[1]
+        shift_select_objects([mixamo_armature_name, mblab_armature_name])
+        mixamo_armature = bpy.context.selected_objects[1]
+        mblab_armature = bpy.context.selected_objects[0]
 
         bpy.ops.object.posemode_toggle()
 
         # Unlock mb-lab pelvis location properties
-        mblab_armature.data.bones['pelvis'].lock_location[0] = False
-        mblab_armature.data.bones['pelvis'].lock_location[1] = False
-        mblab_armature.data.bones['pelvis'].lock_location[2] = False
+        mblab_armature.pose.bones['pelvis'].lock_location[0] = False
+        mblab_armature.pose.bones['pelvis'].lock_location[1] = False
+        mblab_armature.pose.bones['pelvis'].lock_location[2] = False
 
         # Deselect all bones
         bpy.ops.pose.select_all(action='DESELECT')
