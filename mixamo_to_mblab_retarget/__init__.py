@@ -134,9 +134,9 @@ class MIXAMO_OT_mblab_retarget(bpy.types.Operator):
         select_and_activate(bpy.data.objects.get(mixamo_armature_name))
         bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
 
-        shift_select_objects([mixamo_armature_name, mblab_armature_name])
-        mixamo_armature = bpy.context.selected_objects[1]
-        mblab_armature = bpy.context.selected_objects[0]
+        shift_select_objects([mblab_armature_name, mixamo_armature_name])
+        mixamo_armature = bpy.context.selected_objects[0]
+        mblab_armature = bpy.context.selected_objects[1]
 
         bpy.ops.object.posemode_toggle()
 
